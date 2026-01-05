@@ -119,7 +119,7 @@ export default function NotificationsPage() {
           const id = n.id ?? n.notificationId ?? "?";
           const title = n.title ?? "Başlıksız bildirim";
           const bodyRaw: string =
-            n.body ?? n.message ?? n.content ?? "" ?? "";
+            n.body ?? n.message ?? n.content ?? "";
           const bodyPreview =
             bodyRaw.length > 80
               ? bodyRaw.slice(0, 77).trimEnd() + "..."
