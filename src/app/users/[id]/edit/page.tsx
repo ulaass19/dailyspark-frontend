@@ -15,8 +15,7 @@ import {
   Calendar,
 } from "lucide-react";
 
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE || "http://localhost:3000";
+const API_BASE = "https://notification-backend-d1ol.onrender.com";
 
 type EditUserDto = {
   fullName: string;

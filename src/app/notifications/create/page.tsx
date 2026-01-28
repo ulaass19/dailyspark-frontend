@@ -16,8 +16,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE || "http://localhost:3000";
+const API_BASE = "https://notification-backend-d1ol.onrender.com";
 
 type ScheduleMode = "NOW" | "LATER";
 
@@ -156,6 +155,7 @@ export default function CreateNotificationPage() {
         if (mapped.length > 0) {
           setSelectedAudienceId(String(mapped[0].id));
         }
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (err: any) {
         console.error("Audiences fetch error:", err);
         setAudiencesError(
@@ -293,6 +293,7 @@ export default function CreateNotificationPage() {
       setTimeout(() => {
         router.push("/notifications");
       }, 400);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       console.error("Bildirim oluşturma hatası:", err);
       const msg =

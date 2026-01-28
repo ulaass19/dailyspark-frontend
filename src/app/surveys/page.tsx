@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:3000";
+const API_BASE = "https://notification-backend-d1ol.onrender.com";
 
 /* ====================== Types ====================== */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -43,12 +43,14 @@ type SurveyRow = {
 
 type StatusFilter = "ALL" | "DRAFT" | "ACTIVE" | "ARCHIVED";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function safePreview(v: any, max = 90) {
   const s = (v ?? "").toString().trim();
   if (!s) return "";
   return s.length > max ? s.slice(0, max - 3).trimEnd() + "..." : s;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function fmtTR(d: any) {
   if (!d) return "-";
   const dt = new Date(d);
@@ -62,6 +64,7 @@ function fmtTR(d: any) {
   });
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function normalizeStatus(v: any) {
   const s = (v ?? "DRAFT").toString().toUpperCase();
   if (s === "PUBLISHED") return "ACTIVE";
@@ -177,6 +180,7 @@ export default function SurveysPage() {
       });
 
       setSurveys(mapped);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       console.error("Anket listesi yüklenirken hata:", err);
       const msg =
@@ -270,6 +274,7 @@ export default function SurveysPage() {
       });
 
       const text = await res.text();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let data: any = null;
       try {
         data = text ? JSON.parse(text) : null;
@@ -314,6 +319,7 @@ export default function SurveysPage() {
       });
 
       const text = await res.text();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let data: any = null;
       try {
         data = text ? JSON.parse(text) : null;

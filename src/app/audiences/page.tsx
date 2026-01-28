@@ -16,8 +16,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/Toast";
 
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE || "http://localhost:3000";
+const API_BASE = "https://notification-backend-d1ol.onrender.com";
 
 type AudienceRow = {
   id: number | string;

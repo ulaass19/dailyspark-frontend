@@ -18,7 +18,7 @@ import {
 } from "lucide-react";
 
 /* ===================== CONFIG ===================== */
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:3000";
+const API_BASE = "https://notification-backend-d1ol.onrender.com";
 
 /* ===================== TYPES ===================== */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -165,6 +165,7 @@ export default function SurveyCreatePage() {
         .filter(Boolean) as AudienceRow[];
 
       setAudiences(mapped);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
       const msg = e?.message || "Kitleler yüklenirken hata oluştu.";
       setError(msg);
@@ -309,6 +310,7 @@ export default function SurveyCreatePage() {
       });
 
       const text = await res.text();
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       let data: any = null;
       try {
         data = text ? JSON.parse(text) : null;
@@ -328,6 +330,7 @@ export default function SurveyCreatePage() {
       });
 
       router.push("/surveys");
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
       const msg = e?.message || "Yayınlanamadı. Lütfen tekrar dene.";
       setError(msg);

@@ -1,11 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const BACKEND_BASE =
-  process.env.NEXT_PUBLIC_BACKEND_BASE ||
-  process.env.NEXT_PUBLIC_API_BASE ||
-  process.env.BACKEND_BASE ||
-  process.env.API_BASE ||
-  "http://localhost:3000";
+/**
+ * ✅ Notification Backend (PROD)
+ */
+const BACKEND_BASE = "https://notification-backend-d1ol.onrender.com";
 
 export const dynamic = "force-dynamic";
 

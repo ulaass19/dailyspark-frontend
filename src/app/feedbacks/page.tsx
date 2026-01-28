@@ -13,10 +13,10 @@ import {
   Eye,
 } from "lucide-react";
 
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE || "http://localhost:3000";
+const API_BASE = "https://notification-backend-d1ol.onrender.com";
 
 // Backend generic tipi
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 type ApiFeedback = any;
 
 type FeedbackRow = {
@@ -139,6 +139,7 @@ export default function FeedbacksPage() {
       });
 
       setFeedbacks(mapped);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       console.error("Feedback list load error:", err);
       const msg =
