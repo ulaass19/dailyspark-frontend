@@ -195,7 +195,7 @@ export default function CreateNotificationPage() {
         qs.set("take", "50"); // backend destekliyorsa limitler
         qs.set("page", "1");  // backend destekliyorsa
 
-        const res = await fetch(`${API_BASE}/mobile/users?${qs.toString()}`, {
+        const res = await fetch(`${API_BASE}/mobile/users`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
