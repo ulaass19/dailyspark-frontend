@@ -175,9 +175,9 @@ export default function CreateNotificationPage() {
   }, [token]);
 
   /* ========== Kullanıcıları Yükle (kişiye özel) ========== */
+    /* ========== Kullanıcıları Yükle (kişiye özel) ========== */
   useEffect(() => {
     async function loadUsers() {
-      // sadece USER modunda lazım
       if (sendTarget !== "USER") return;
 
       try {
@@ -189,11 +189,11 @@ export default function CreateNotificationPage() {
           return;
         }
 
-        // ✅ Beklenen endpoint: GET /admin/users?q=...&take=50
-        // Eğer sende yoksa, aşağıdaki bölümde ben backend endpointini de veriyorum.
+        // ✅ Doğru endpoint: GET /mobile/users
         const qs = new URLSearchParams();
-        if (userQuery.trim()) qs.set("q", userQuery.trim());
-        qs.set("take", "50");
+        if (userQuery.trim()) qs.set("q", userQuery.trim()); // backend destekliyorsa filtreler
+        qs.set("take", "50"); // backend destekliyorsa limitler
+        qs.set("page", "1");  // backend destekliyorsa
 
         const res = await fetch(`${API_BASE}/mobile/users?${qs.toString()}`, {
           headers: {
@@ -205,9 +205,7 @@ export default function CreateNotificationPage() {
         if (!res.ok) {
           const text = await res.text().catch(() => "");
           console.error("Users fetch error:", res.status, text);
-          throw new Error(
-            "Kullanıcı listesi alınamadı. (Backend'de GET /admin/users endpoint'i yok olabilir)"
-          );
+          throw new Error("Kullanıcı listesi alınamadı.");
         }
 
         const data = await res.json();
@@ -229,7 +227,9 @@ export default function CreateNotificationPage() {
         }));
 
         setUsers(mapped);
-        if (!selectedUserId && mapped.length > 0) setSelectedUserId(String(mapped[0].id));
+        if (!selectedUserId && mapped.length > 0) {
+          setSelectedUserId(String(mapped[0].id));
+        }
       } catch (err: any) {
         setUsersError(err?.message || "Kullanıcılar alınırken bir hata oluştu.");
       } finally {
@@ -240,6 +240,7 @@ export default function CreateNotificationPage() {
     void loadUsers();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sendTarget, token, userQuery]);
+
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
