@@ -195,7 +195,7 @@ export default function CreateNotificationPage() {
         if (userQuery.trim()) qs.set("q", userQuery.trim());
         qs.set("take", "50");
 
-        const res = await fetch(`${API_BASE}/admin/users?${qs.toString()}`, {
+        const res = await fetch(`${API_BASE}/mobile/users?${qs.toString()}`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${token}`,
