@@ -17,7 +17,7 @@ import {
   AlertTriangle,
 } from "lucide-react";
 
-const API_BASE = "https://notification-backend-d1ol.onrender.com";
+const API_BASE = "https://notification-backend-znes.onrender.com";
 
 type ScheduleMode = "NOW" | "LATER";
 
