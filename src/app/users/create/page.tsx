@@ -19,7 +19,7 @@ import {
   Lock,
 } from "lucide-react";
 
-const API_BASE = "https://notification-backend-d1ol.onrender.com";
+const API_BASE = "https://notification-backend-znes.onrender.com";
 
 /* ==== Enum tipleri (Prisma enum’larıyla bire bir aynı) ==== */
 type UserRole = "USER" | "ADMIN";
