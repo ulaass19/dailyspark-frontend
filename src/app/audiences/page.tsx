@@ -16,7 +16,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/Toast";
 
-const API_BASE = "https://notification-backend-d1ol.onrender.com";
+const API_BASE = "https://notification-backend-znes.onrender.com";
 
 type AudienceRow = {
   id: number | string;
