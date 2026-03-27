@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 /**
  * ✅ Notification Backend (PROD)
  */
-const BACKEND_BASE = "https://notification-backend-d1ol.onrender.com";
+const BACKEND_BASE = "https://notification-backend-znes.onrender.com";
 
 export const dynamic = "force-dynamic";
 
