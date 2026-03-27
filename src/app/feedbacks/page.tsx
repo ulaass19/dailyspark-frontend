@@ -13,7 +13,7 @@ import {
   Eye,
 } from "lucide-react";
 
-const API_BASE = "https://notification-backend-d1ol.onrender.com";
+const API_BASE = "https://notification-backend-znes.onrender.com";
 
 // Backend generic tipi
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
