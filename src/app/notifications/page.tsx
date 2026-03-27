@@ -23,7 +23,7 @@ import { useRouter } from "next/navigation";
 import { OneSignalStatusBadge } from "@/components/OneSignalStatusBadge";
 
 
-const API_BASE = "https://notification-backend-d1ol.onrender.com";
+const API_BASE = "https://notification-backend-znes.onrender.com";
 
 /* ===== Tipler ===== */
 
